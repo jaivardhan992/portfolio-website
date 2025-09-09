@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jai Vardhan | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #f1f1f1;
+    }
+
+    /* Navbar */
+    nav {
+      background: #000;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: #f39c12;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Parallax Header */
+    header {
+      height: 100vh;
+      background: url('https://picsum.photos/1200/800') no-repeat center center/cover;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #f39c12;
+      margin-bottom: 20px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: left;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Scroll animation */
+    .hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Hi, I'm Jai Vardhan</h1>
+    <p>Aspiring Developer | Creative Learner</p>
+  </header>
+
+  <section id="about" class="hidden">
+    <h2>About Me</h2>
+    <p>
+      I’m Jai Vardhan, currently learning web development and exploring creative projects.  
+      I enjoy trying out design ideas and making websites look clean and easy to use.
+    </p>
+  </section>
+
+  <section id="projects" class="hidden">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>A site with parallax and animations, built using HTML, CSS, and JS.</p>
+      </div>
+      <div class="card">
+        <h3>Mini Resume</h3>
+        <p>A simple digital resume made with HTML and CSS.</p>
+      </div>
+      <div class="card">
+        <h3>Upcoming</h3>
+        <p>Exploring advanced JS libraries like GSAP and Three.js.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="hidden">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:jaivardhan.254@gmail.com">jaivardhan.254@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/jai-vardhan-80607037a" target="_blank">linkedin.com/in/jai-vardhan-80607037a</a></p>
+  </section>
+
+  <footer>
+    © 2025 Jai Vardhan. All rights reserved.
+  </footer>
+
+  <script>
+    // Scroll animation reveal
+    const hiddenEls = document.querySelectorAll('.hidden');
+    window.addEventListener('scroll', () => {
+      hiddenEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('show');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
